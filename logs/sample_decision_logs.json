@@ -1,0 +1,113 @@
+{
+  "_comment": "TrilogyOS — Sample Decision Logs",
+  "_version": "0.1.0",
+  "_class": "VERIFICATION SURFACE ONLY",
+  "_note": "Decision records only. No internal scoring, weights, or heuristics.",
+
+  "decisions": [
+    {
+      "id": "D-001",
+      "timestamp": "2026-03-24T10:00:00Z",
+      "state": {"mode": "ARCHITECT", "scope": "NON_EXEC"},
+      "action": "CREATE_ARTEFACT",
+      "decision": "ALLOW",
+      "reason_code": "VALID_ACTION_WITHIN_SCOPE"
+    },
+    {
+      "id": "D-002",
+      "timestamp": "2026-03-24T10:01:30Z",
+      "state": {"mode": "ARCHITECT", "scope": "NON_EXEC"},
+      "action": "DEPLOY_SYSTEM",
+      "decision": "DENY",
+      "reason_code": "SCOPE_ESCALATION_NO_HUMAN_AUTHORITY"
+    },
+    {
+      "id": "D-003",
+      "timestamp": "2026-03-24T10:02:15Z",
+      "state": {"mode": "ARCHITECT", "scope": null},
+      "action": "CREATE_ARTEFACT",
+      "decision": "HOLD",
+      "reason_code": "MISSING_STATE_FIELD"
+    },
+    {
+      "id": "D-004",
+      "timestamp": "2026-03-24T10:03:00Z",
+      "state": {"mode": "GOVERNANCE", "scope": "NON_EXEC"},
+      "action": "MODIFY_GOVERNANCE_ENGINE",
+      "decision": "DENY",
+      "reason_code": "UNKNOWN_ACTION_TYPE"
+    },
+    {
+      "id": "D-005",
+      "timestamp": "2026-03-24T10:04:45Z",
+      "state": {"mode": "ARCHITECT", "scope": "NON_EXEC"},
+      "action": "CREATE_ARTEFACT",
+      "decision": "DENY",
+      "reason_code": "COMMIT_BOUNDARY_UNGATED"
+    },
+    {
+      "id": "D-006",
+      "timestamp": "2026-03-24T10:06:00Z",
+      "state": {"mode": "ARCHITECT", "scope": "NON_EXEC"},
+      "action": "CREATE_ARTEFACT",
+      "decision": "DENY",
+      "reason_code": "STALE_AUTHORITY"
+    },
+    {
+      "id": "D-007",
+      "timestamp": "2026-03-24T10:07:30Z",
+      "state": {"mode": "INTERFACE", "scope": "NON_EXEC"},
+      "action": "RENDER_OUTPUT",
+      "decision": "ALLOW",
+      "reason_code": "VALID_ACTION_WITHIN_SCOPE"
+    },
+    {
+      "id": "D-008",
+      "timestamp": "2026-03-24T10:08:15Z",
+      "state": {"mode": "ARCHITECT", "scope": "REVIEW_ONLY_OR_EXEC"},
+      "action": "CREATE_ARTEFACT",
+      "decision": "HOLD",
+      "reason_code": "AMBIGUOUS_SCOPE"
+    },
+    {
+      "id": "D-009",
+      "timestamp": "2026-03-24T10:09:00Z",
+      "state": {"mode": "GOVERNANCE", "scope": "NON_EXEC"},
+      "action": "ISSUE_GOVERNANCE_VERDICT",
+      "decision": "DENY",
+      "reason_code": "ROLE_SUBSTITUTION_VIOLATION"
+    },
+    {
+      "id": "D-010",
+      "timestamp": "2026-03-24T10:10:30Z",
+      "state": {"mode": "ARCHIVE", "scope": "NON_EXEC"},
+      "action": "STORE_ARTEFACT",
+      "decision": "ALLOW",
+      "reason_code": "VALID_ACTION_WITHIN_SCOPE"
+    },
+    {
+      "id": "D-011",
+      "timestamp": "2026-03-24T10:11:00Z",
+      "state": {"mode": "ARCHITECT", "scope": "NON_EXEC"},
+      "action": "ESCALATE_PRIVILEGES",
+      "decision": "DENY",
+      "reason_code": "UNKNOWN_ACTION_TYPE"
+    },
+    {
+      "id": "D-012",
+      "timestamp": "2026-03-24T10:12:00Z",
+      "state": {"mode": "ARCHITECT", "scope": "NON_EXEC"},
+      "action": "CREATE_ARTEFACT",
+      "decision": "ALLOW",
+      "reason_code": "VALID_ACTION_WITHIN_SCOPE"
+    }
+  ],
+
+  "summary": {
+    "total_decisions": 12,
+    "allow": 4,
+    "deny": 6,
+    "hold": 2,
+    "note": "Denial-heavy distribution is expected. The system denies more than it allows. This is by design."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_comment": "TrilogyOS — Example: Unknown Action",
+  "_version": "0.1.0",
+  "_class": "VERIFICATION SURFACE ONLY",
+
+  "scenario": "An action type not in the defined action set",
+
+  "input": {
+    "state": {
+      "mode": "GOVERNANCE",
+      "scope": "NON_EXEC",
+      "origin_authority": "HUMAN",
+      "commit_boundary": true
+    },
+    "action": {
+      "type": "MODIFY_GOVERNANCE_ENGINE",
+      "target": "constraint_kernel",
+      "scope": "NON_EXEC"
+    },
+    "metadata": {
+      "origin": "HUMAN",
+      "timestamp": "2026-03-24T14:15:00Z",
+      "role_tag": "ORCHESTRATOR"
+    }
+  },
+
+  "evaluation": {
+    "governance_called": true,
+    "commit_boundary_checked": true,
+    "authority_traced_to_origin": true,
+    "all_required_fields_present": true,
+    "action_in_defined_set": false,
+    "action_type_recognised": false
+  },
+
+  "verdict": {
+    "decision": "DENY",
+    "reason_code": "UNKNOWN_ACTION_TYPE",
+    "timestamp": "2026-03-24T14:15:01Z"
+  },
+
+  "explanation": "The action type 'MODIFY_GOVERNANCE_ENGINE' is not in the defined action set. Under the closed-world assumption, undefined actions are never permitted. The system does not infer intent from unrecognised input. DENY is immediate and terminal. Adding new action types requires a versioned schema change."
+}

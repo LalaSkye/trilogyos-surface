@@ -1,0 +1,44 @@
+{
+  "_comment": "TrilogyOS — Example: Held Transition",
+  "_version": "0.1.0",
+  "_class": "VERIFICATION SURFACE ONLY",
+
+  "scenario": "An action with missing state fields — governance cannot evaluate safely",
+
+  "input": {
+    "state": {
+      "mode": "ARCHITECT",
+      "scope": null,
+      "origin_authority": "HUMAN",
+      "commit_boundary": true
+    },
+    "action": {
+      "type": "CREATE_ARTEFACT",
+      "target": "governance_rule",
+      "scope": "REVIEW_ONLY"
+    },
+    "metadata": {
+      "origin": "HUMAN",
+      "timestamp": "2026-03-24T14:10:00Z",
+      "role_tag": "ORCHESTRATOR"
+    }
+  },
+
+  "evaluation": {
+    "governance_called": true,
+    "commit_boundary_checked": true,
+    "authority_traced_to_origin": true,
+    "all_required_fields_present": false,
+    "missing_fields": ["state.scope"],
+    "action_in_defined_set": true,
+    "scope_unambiguous": false
+  },
+
+  "verdict": {
+    "decision": "HOLD",
+    "reason_code": "MISSING_STATE_FIELD",
+    "timestamp": "2026-03-24T14:10:01Z"
+  },
+
+  "explanation": "State is missing the 'scope' field. The governance function cannot evaluate admissibility with incomplete state. The system does not guess or infer the missing value. Execution is suspended until the field is supplied. HOLD does not expire into ALLOW."
+}

@@ -1,0 +1,43 @@
+{
+  "_comment": "TrilogyOS — Example: Allowed Transition",
+  "_version": "0.1.0",
+  "_class": "VERIFICATION SURFACE ONLY",
+
+  "scenario": "A well-formed action with valid state, within defined scope, at a commit boundary",
+
+  "input": {
+    "state": {
+      "mode": "ARCHITECT",
+      "scope": "NON_EXEC",
+      "origin_authority": "HUMAN",
+      "commit_boundary": true
+    },
+    "action": {
+      "type": "CREATE_ARTEFACT",
+      "target": "spec_document",
+      "scope": "NON_EXEC"
+    },
+    "metadata": {
+      "origin": "HUMAN",
+      "timestamp": "2026-03-24T14:00:00Z",
+      "role_tag": "ORCHESTRATOR"
+    }
+  },
+
+  "evaluation": {
+    "governance_called": true,
+    "commit_boundary_checked": true,
+    "authority_traced_to_origin": true,
+    "all_required_fields_present": true,
+    "action_in_defined_set": true,
+    "scope_unambiguous": true
+  },
+
+  "verdict": {
+    "decision": "ALLOW",
+    "reason_code": "VALID_ACTION_WITHIN_SCOPE",
+    "timestamp": "2026-03-24T14:00:01Z"
+  },
+
+  "explanation": "All preconditions met. State is complete, action is defined, scope is unambiguous, authority traces to human origin, governance function was called at commit boundary. Transition proceeds."
+}
