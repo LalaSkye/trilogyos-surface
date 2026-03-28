@@ -157,3 +157,8 @@ See [LICENSE](LICENSE) for full terms.
 
 Ricky Jones
 Os-Trilogy LMT
+
+---
+
+This repository demonstrates deterministic control using standard engineering techniques. No proprietary frameworks or external implementations are used.
+
